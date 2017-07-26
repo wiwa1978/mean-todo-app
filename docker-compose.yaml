@@ -5,6 +5,6 @@ services:
     ports:
      - "3000:3000"
     depends_on:
-     - mongo-container
-  mongo-container:
+     - mongo
+  mongo:
     image: mongo
