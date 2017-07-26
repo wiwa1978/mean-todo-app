@@ -1,0 +1,1 @@
+This is a sample MEAN app used in blogpost:  http://blog.wimwauters.com/kubernetes-deploy-mean-application
