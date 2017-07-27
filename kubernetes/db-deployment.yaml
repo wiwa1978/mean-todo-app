@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mean-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: db
+  template:
+    metadata:
+      labels:
+        type: db
+        version: v0.1
+    spec:
+      containers:
+      - name: mean-mongo
+        image: mongo
+        imagePullPolicy: Always
+        ports:
+        - name: mongo
+          containerPort: 27017
+          hostPort: 27017
+        volumeMounts:
+            - name: express-container-claim0
+              mountPath: /data/db
+      volumes:
+      - name: express-container-claim0
+        persistentVolumeClaim:
+          claimName: express-container-claim0
+
