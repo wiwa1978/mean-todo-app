@@ -2,7 +2,7 @@
 var myApp = angular.module('myApp', []);
 myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
    
-url = 'http://localhost:3000/todos/'
+url = 'http://192.168.99.100:3100/todos'
 
 var refresh = function() {
   $http.get(url).success(function(response) {
